@@ -56,9 +56,12 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 #bindsym $mod+d exec --no-startup-id rofi -show run -theme onedark -lines 3 -eh 2 -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 12"
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -theme custom-nord -dmenu -lines 5 -eh 2 -bw 0 -font "System San Francisco Display 12" -i sort'
+# ESTE ES EL ORIGINAL
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -theme custom-nord -dmenu -lines 5 -eh 2 -bw 0 -font "System San Francisco Display 12" -i sort'
+
+bindsym $mod+d exec "rofi -show drun -sidebar-mode -theme custom-nord -modi drun,window,ssh -show-icons"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -119,7 +122,7 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Web "
 set $ws2 "2: Terminal "
-set $ws3 "3: File Manager "
+set $ws3 "3: File Manager "
 set $ws4 "4: Music "
 set $ws5 "5: VirtualBox "
 set $ws6 "6: Email "
@@ -164,6 +167,11 @@ assign [class="Claws-mail"] $ws6
 assign [class="Filezilla"] $ws7
 assign [class="calibre"] $ws8
 
+for_window [class="(?i)lxappearance"] floating enable
+for_window [title="(?i)pulseaudio multiband EQ"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+for_window [class="(?i)nm-connection-editor"] floating enable
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -203,6 +211,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3blocks -c /home/vsantos/.config/i3/i3blocks.conf
         position top
+        separator_symbol ""
         colors {
                 background        $bg-color
                 separator         #757575
@@ -211,6 +220,7 @@ bar {
                 inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
         }
+        font pango:Source Code Pro for Powerline, FontAwesome Regular, Icons 9
 }
 #
 # APLICACIONS QUE SEXECUTAN A LINICI
@@ -228,6 +238,8 @@ exec --no-startup-id chromium
 exec --no-startup-id thunar
 # GESTOR FTP
 exec --no-startup-id filezilla
+# VIRTUAL BOX
+exec --no-startup-id virtualbox
 
 #
 # PARA CONFIGURAR LA CONNEXION ( ETHERNET / WIFI )
@@ -242,7 +254,7 @@ bindsym $mod+shift+x exec ~/.config/scripts/lock.sh
 #
 # PARA VISUALIZAR EL FONDO DE PANTALLA
 #
-exec_always --no-startup-id feh --bg-scale --no-fehbg ~/.config/wallpapers/Wallpaper_001.jpg
+exec_always --no-startup-id feh --bg-scale --no-fehbg ~/.config/wallpapers/Wallpaper_08.jpg
 #
 # EJECUTAR SIEMPRE COMPTON ( PROGRAMA PARA EL MENU )
 #
