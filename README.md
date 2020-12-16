@@ -1,21 +1,24 @@
 # i3-wm
 
-Fichero de configuració de mi anterior gestor de ventanas I3wm.
+Fitxer de configuració del meu actual gestor de finestres ( i3WM ).
 
-Esta pensado para funcionar en un GNU/Debian
+Tot el que hi ha aqui penjat esta pensat per fer-s'he servir amb GNU/Debian.
 
-Contiene los siguientes ficheros:
+Conter el següents fitxers:
 
-* fonts : directorio donde estan las fuentes para i3-wm ( este directorio tiene que estar oculto )
-* gtk-3.0 : directorio que contiene el fichero de configuración de las aplicaciones gtk3
-* i3 : directorio que contiene los archivos de configuración de i3-wm
-  * config :fichero de configuración de i3-wm
-  * i3blocks.conf : fichero de configuración de la barra de estado
-  * example_config.txt : fichero de ejemplo de i3-wm que puede servir como modelo
-* i3blocks : ficheros que se necesitan para visualizar la información de la bateria y de la papelera
-  * En este caso son "trash" y "battery". Se tienen que copiar en /usr/share/i3blocks
-  * En el caso de "battery" necesita el paquete "ACPI"
-* rofi : ficheros / templates para el lanzador de aplicaciones.
-* scripts : directorio donde esta lo necesario para bloquear la pantalla en caso de necesidad
-* packages_install_i3wm : Todos los paquetes que tengo instalados para poder usar i3-wm
-  * En este caso es para una distribución de GNU/Debian.
+* fonts : directori on estan les fonts per a i3WM ( aquest directori te que esta ocult )
+* gtk-3.0 : directori que conte el fitxer de configuració per a les aplicacions GKT3
+* i3 : directori que conte els arxius per a la configuració de i3WM
+  * config : fitxer que conte la configuració de i3WM
+  * i3blocks.conf : fitxer que conte la configuració de la barra d'estat
+  * example_config.txt : fitxer d'exemple de i3WM que pot fer-s'he servir com a model.
+* i3blocks : fitxers que es necessiten per a visualitzar informació sobre el sistema ( han d'estat situats a `/usr/share/i3blocks` ), aquests fitxers son:
+  * "trash": per veure els fitxers que hi ha a la paperera
+  * "battery": per veure l'estat de la bateria ( durada, endollat o no, etc... )
+  ** Per fer servir aquest fitxer es necessita que estigui instalat el paquet "ACPI"
+  * "cpu": per veure el nivell d'ocupació de la CPU
+  * "memory": per veure el nivell d'ocupació de la RAM del sistema. Inclou el percentatge.
+* rofi : fitxers / templates per el llançador d'aplicacions.
+* scripts : directori on estan els fitxers necessaris per bloqueja la pantalla en cas de necessitat.
+* packages_install_i3wm : Tots els paquets que jo tinc instalats per fer servir i3WM.
+  * En aquest cas, es per una distribució de GNU/Debian.
