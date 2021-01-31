@@ -15,7 +15,7 @@ Conter el següents fitxers:
 * i3blocks : fitxers que es necessiten per a visualitzar informació sobre el sistema ( han d'estat situats a `/usr/share/i3blocks` ), aquests fitxers son:
   * "trash": per veure els fitxers que hi ha a la paperera
   * "battery": per veure l'estat de la bateria ( durada, endollat o no, etc... )
-  ** Per fer servir aquest fitxer es necessita que estigui instalat el paquet "ACPI"
+    * Per fer servir aquest fitxer es necessita que estigui instalat el paquet "ACPI"
   * "cpu": per veure el nivell d'ocupació de la CPU
   * "memory": per veure el nivell d'ocupació de la RAM del sistema. Inclou el percentatge.
 * rofi : fitxers / templates per el llançador d'aplicacions.
